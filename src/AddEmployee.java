@@ -31,5 +31,7 @@ public abstract class AddEmployee
         e.pc = pc;
         e.ps = ps;
         db.addEmployee(empId, e);
+        if(union==true)
+            db.addUnionMember(empId,e);
     }
 }

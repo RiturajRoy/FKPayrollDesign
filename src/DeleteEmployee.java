@@ -8,7 +8,10 @@ public class DeleteEmployee
         this.db = db;
     }
     public void delete() {
-        db.deleteEmployee(empId);
+        if(db.employees.get(empId)!=null)
+            db.deleteEmployee(empId);
+        if(db.members.get(empId)!=null)
+            db.deleteMember(empId);
     }
 
 }
