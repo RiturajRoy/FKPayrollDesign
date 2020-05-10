@@ -32,10 +32,12 @@ public class Employee
         double dues=0;
         if(union==true)
             dues=this.dues+duesrate/100.0*salary;
-        double net = salary - dues;
+        double net = salary + wages - dues;
         paycheck.salary = salary;
         paycheck.dues = dues;
         paycheck.net = net;
+        wages=0;
+        dues=0;
         return paycheck;
     }
 
