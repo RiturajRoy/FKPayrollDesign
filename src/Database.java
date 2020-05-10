@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.io.FileWriter;
 public class Database {
 
-    private static HashMap<Integer,Employee> employees = new HashMap<Integer,Employee>();
-    private static HashMap<Integer,Employee> members = new HashMap<Integer, Employee>();
+    public static HashMap<Integer,Employee> employees = new HashMap<Integer,Employee>();
+    public static HashMap<Integer,Employee> members = new HashMap<Integer, Employee>();
 
     public void addEmployee(int id, Employee employee) {
         employees.put(id, employee);
@@ -64,7 +64,7 @@ public class Database {
         return members.get(memberId);
     }
 
-    public void removeUnionMember(int memberId) 
+    public void deleteMember(int memberId) 
     {
       members.remove(memberId);
       Gson gson = new Gson();
