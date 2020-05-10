@@ -8,17 +8,21 @@ public class Employee
     public boolean union;
     public PaymentClassification pc;
     public PaymentSchedule ps;
-    public double salary=0.0;
+    public double commrate;
+    public double duesrate;
+    public double wages=0.0;
     public double dues=0.0;
 
 
-    public Employee(int eId, String name, String address,String pm,boolean union) 
+    public Employee(int eId, String name, String address,String pm,boolean union,double commrate,double duesrate) 
     {
         this.eId = eId;
         this.name = name;
         this.address = address;
         this.pm=pm;
         this.union=union;
+        this.commrate=commrate;
+        this.duesrate=duesrate;
     }
 
 

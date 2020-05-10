@@ -5,11 +5,13 @@ public abstract class AddEmployee
     private String address;
     private String pm;
     private boolean union;
-    private double salary;
+    private double commrate;
+    private double duesrate; 
+    private double wages;
     private double dues; 
     private Database db;
 
-    public AddEmployee(int empId, String name, String address,String pm,boolean union, Database db) 
+    public AddEmployee(int empId, String name, String address,String pm,boolean union,double commrate,double duesrate, Database db) 
     {
         this.empId = empId;
         this.name = name;
@@ -17,7 +19,9 @@ public abstract class AddEmployee
         this.pm=pm;
         this.union=union;
         this.db = db;
-        this.salary=0.0;
+        this.commrate=commrate;
+        this.duesrate=duesrate;
+        this.wages=0.0;
         this.dues=0.0;
     }
 
@@ -27,7 +31,7 @@ public abstract class AddEmployee
     public void initialize() {
         PaymentClassification pc = Classification();
         PaymentSchedule ps = Schedule();
-        Employee e = new Employee(empId, name, address,pm,union);
+        Employee e = new Employee(empId, name, address,pm,union,commrate,duesrate);
         e.pc = pc;
         e.ps = ps;
         db.addEmployee(empId, e);
