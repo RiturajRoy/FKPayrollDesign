@@ -1,7 +1,7 @@
 public abstract class ChangeEmployee
 {
     private final int empId;
-    private Database db;
+    public Database db;
 
     public ChangeEmployee(int empId, Database db) {
         this.empId = empId;
