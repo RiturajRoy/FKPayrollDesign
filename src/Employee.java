@@ -10,11 +10,12 @@ public class Employee
     public PaymentSchedule ps;
     public double commrate;
     public double duesrate;
+    public LocalDate previouspaydate;
     public double wages=0.0;
     public double dues=0.0;
 
 
-    public Employee(int eId, String name, String address,String pm,boolean union,double commrate,double duesrate) 
+    public Employee(int eId, String name, String address,String pm,boolean union,double commrate,double duesrate,LocalDate previouspaydate) 
     {
         this.eId = eId;
         this.name = name;
@@ -23,6 +24,7 @@ public class Employee
         this.union=union;
         this.commrate=commrate;
         this.duesrate=duesrate;
+        this.previouspaydate=previouspaydate;
     }
 
 
