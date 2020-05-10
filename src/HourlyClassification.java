@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class HourlyClassification implements PaymentClassification
 {
     public double hourlyRate;
-    public HashMap<LocalDate,TimeCard> timecards = new HashMap<LocalDate,TimeCard>();
+    public static HashMap<LocalDate,TimeCard> timecards = new HashMap<LocalDate,TimeCard>();
     public HourlyClassification(double hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
