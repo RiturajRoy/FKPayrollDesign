@@ -31,7 +31,7 @@ public class Employee
         double salary = pc.calculatePay(paycheck);
         double dues=0;
         if(union==true)
-            dues=this.dues;
+            dues=this.dues+duesrate/100.0*salary;
         double net = salary - dues;
         paycheck.salary = salary;
         paycheck.dues = dues;
