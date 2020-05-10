@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class HourlyClassification implements PaymentClassification
 {
     public double hourlyRate;
-    public static HashMap<LocalDate,TimeCard> timecards = new HashMap<LocalDate,TimeCard>();
+    public HashMap<LocalDate,TimeCard> timecards = new HashMap<LocalDate,TimeCard>();
     public HourlyClassification(double hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
@@ -15,19 +15,7 @@ public class HourlyClassification implements PaymentClassification
         return timecards.get(date);
     }
     public void addTimeCard(LocalDate date, double workingHours) {
-        timecards.put(date, new TimeCard(date, workingHours));
-        Gson gson = new Gson();
-        String json = gson.toJson(timecards);
-        try
-        {
-            FileWriter file = new FileWriter("timecards.json");
-            file.write(json);
-            file.close();
-        }
-        catch (IOException e) 
-        {
-             e.printStackTrace();
-        } 
+        timecards.put(date, new TimeCard(date, workingHours)); 
     }
     public double calculatePay(Paycheck paycheck) {
       double salary = 0;
